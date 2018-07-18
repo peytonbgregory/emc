@@ -1,7 +1,1 @@
-<?php 
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-function theme_enqueue_styles() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-
-}
-?>
+<?php add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );function theme_enqueue_styles() {	wp_register_style( 'font-style', 'https://fonts.googleapis.com/css?family=Exo:300,400,500,600,700,800|Lato:300,400,700' );	wp_register_style( 'jobs-style', '//jobs.ourcareerpages.com/Resources/css/ccp_widget_support.css' );	wp_register_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', '', 'all' );	wp_register_style( 'ticstrap-css', get_template_directory_uri().'/css/ticstrap.min.css', array(), '1.1');    wp_register_style( 'parent-style', get_template_directory_uri() . '/style.css', '', 'all');	wp_register_style( 'bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', '', 'all');	wp_register_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js','','false');	wp_enqueue_style( array('font-style', 'bootstrap-style', 'parent-style', 'ticstrap-css', 'child-style', 'jobs-style'));	wp_enqueue_script( array('jquery', 'bootstrap-script'));}?>
